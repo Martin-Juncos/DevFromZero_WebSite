@@ -1,0 +1,38 @@
+/* Variables Globales y de Configuración */
+:root {
+  /* Paleta de Colores */
+  --color-typography-1: #ffffff;
+  --color-typography-2: #8a94a7;
+  --color-typography-3: #3b404c;
+  --color-bg-1: #15181d;
+  --color-bg-2: #1d2026;
+  --color-bg-3: #242830;
+  --color-bg-4: #2c3039;
+  --color-primary-1: #0270d7;
+  --color-primary-2: #0f8afd;
+  --color-primary-3: #0256a4;
+
+  /* Tipografía Base */
+  --font-base: "IBM Plex Sans", sans-serif;
+
+  /* Anchos de Contenedores y Padding (inspirados en Sass) */
+  --content-padding-mobile: 16px;
+  --content-padding-desktop: 24px;
+  --container-width: 1080px;
+  --container-width-sm: 800px;
+
+  /* Breakpoints Responsivos */
+  /* XS: <576px, SM: 576px-767px, MD: 768px-991px, LG: 992px-1199px, XL: 1200px-1399px, XXL: ≥1400px */
+  --breakpoint-xs: 576px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 992px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1400px;
+}
+
+/* Reset Básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

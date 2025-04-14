@@ -1,0 +1,73 @@
+/* src/components/Curso/Curso.module.css */
+
+.contenidos-container {
+  padding: 2rem;
+  background-color: var(--color-bg-1);
+  color: var(--color-typography-1);
+  font-family: var(--font-base);
+  text-align: center;
+}
+
+.volver-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary-1);
+  border: none;
+  border-radius: 4px;
+  color: var(--color-typography-1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.volver-button:hover {
+  background-color: var(--color-primary-2);
+}
+
+.contenidos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto;
+  overflow-x: auto;
+}
+
+.contenidos-table th,
+.contenidos-table td {
+  padding: 1rem;
+  border: 1px solid var(--color-bg-2);
+  text-align: left;
+}
+
+.contenidos-table th {
+  background-color: var(--color-bg-2);
+  font-weight: 600;
+}
+
+.contenidos-table ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+  text-align: left;
+}
+
+.contenidos-table li {
+  margin-bottom: 0.5rem;
+}
+
+/* RESPONSIVIDAD: Ajuste para dispositivos móviles */
+@media (max-width: 767.98px) {
+  .contenidos-container {
+    padding: 1rem;
+  }
+
+  .volver-button {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .contenidos-table th,
+  .contenidos-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

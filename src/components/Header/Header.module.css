@@ -1,0 +1,154 @@
+/* src/components/Header/Header.module.css */
+/* Estilos Globales */
+.bodyWrap {
+  background-color: var(--color-bg-1);
+  color: var(--color-typography-1);
+  font-family: var(--font-base);
+  overflow-x: hidden;
+  /* Usamos padding variable según dispositivo, se ajustará en media queries */
+  padding: 0 var(--content-padding-desktop);
+}
+/* HEADER */
+.siteHeader {
+  font-family: var(--font-base);
+  background-color: var(--color-bg-1);
+  padding: var(--content-padding-desktop) 0;
+  position: relative;
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.brand a {
+  display: inline-block;
+}
+
+.logoImage {
+  max-width: 150px;
+  width: 100%;
+  height: 70px;
+}
+
+/* Estilos para el bloque de usuario autenticado */
+.authContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.authGreeting {
+  font-size: 1rem;
+  color: var(--color-typography-1);
+  margin-right: 0.5rem;
+}
+
+.imgUser {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.authButton {
+  background-color: var(--color-primary-1);
+  border: none;
+  color: var(--color-typography-1);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.authButton:hover {
+  background-color: var(--color-primary-2);
+}
+
+/* NAVIGACIÓN */
+.nav {
+  display: flex;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navItem {
+  margin-left: 2rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--color-typography-1);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: var(--color-primary-1);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  margin: 20px;
+}
+
+.hamburgerLine {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-typography-1);
+}
+
+/* RESPONSIVE: MENÚ HAMBURGUESA */
+@media (max-width: 767.98px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-1);
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav.open {
+    max-height: 300px; /* Ajusta este valor según el contenido */
+  }
+  .navList {
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 11rem;
+  }
+  .navItem {
+    margin: 0.3rem 0;
+    text-align: center;
+  }
+}

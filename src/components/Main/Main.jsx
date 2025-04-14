@@ -1,4 +1,8 @@
-import styles from "../Landing/LandingPage.module.css";
+// src/components/Main/Main.jsx
+import { useEffect } from "react";
+import anime from "animejs";
+
+import styles from "./Main.module.css";
 // Importación de imágenes
 import featureIcon01 from "../../assets/images/feature-icon-01.svg";
 import featureIcon02 from "../../assets/images/feature-icon-02.svg";
@@ -8,8 +12,19 @@ import featureIcon05 from "../../assets/images/feature-icon-05.svg";
 import featureIcon06 from "../../assets/images/feature-icon-06.svg";
 
 function Main() {
+  useEffect(() => {
+    // Animación inicial para elementos con la clase "animated"
+    anime({
+      targets: `.${styles.animated}`,
+      translateY: [-50, 0],
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 2000,
+      delay: anime.stagger(100),
+    });
+  }, []);
   return (
-    <div>
+    <div className={styles.bodyWrap}>
       {" "}
       <main>
         {/* Sección Hero */}

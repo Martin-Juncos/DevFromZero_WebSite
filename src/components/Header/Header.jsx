@@ -1,7 +1,11 @@
-import styles from "../Landing/LandingPage.module.css";
+// src/components/Header/Header.jsx
+import styles from "./Header.module.css";
 import logo from "../../assets/images/logo.svg";
 import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+
 function Header() {
+  const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -45,9 +49,35 @@ function Header() {
                   </a>
                 </li>
                 <li className={styles.navItem}>
-                  <a href="#" className={styles.navLink}>
-                    Ingresar
-                  </a>
+                  {isAuthenticated ? (
+                    <div className={styles.authContainer}>
+                      <span className={styles.authGreeting}>
+                        {`Hola ${user.given_name}`}
+                      </span>
+                      <img
+                        className={styles.imgUser}
+                        src={user.picture}
+                        alt={user.name}
+                      />
+                      <button
+                        className={styles.authButton}
+                        onClick={() =>
+                          logout({
+                            logoutParams: { returnTo: window.location.origin },
+                          })
+                        }
+                      >
+                        Log Out
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      className={styles.authButton}
+                      onClick={() => loginWithRedirect()}
+                    >
+                      Ingresar
+                    </button>
+                  )}
                 </li>
               </ul>
             </nav>

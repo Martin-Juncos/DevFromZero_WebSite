@@ -1,4 +1,5 @@
-import styles from "../Landing/LandingPage.module.css";
+// src/components/Footer/Footer.jsx
+import styles from "./Footer.module.css";
 import {
   FaInstagram,
   FaTwitter,

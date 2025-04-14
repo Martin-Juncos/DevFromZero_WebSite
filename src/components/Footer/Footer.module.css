@@ -1,0 +1,125 @@
+/* src/components/Footer/Footer.module.css */
+/* Estilos Globales */
+.bodyWrap {
+  background-color: var(--color-bg-1);
+  color: var(--color-typography-1);
+  font-family: var(--font-base);
+  overflow-x: hidden;
+  /* Usamos padding variable según dispositivo, se ajustará en media queries */
+  padding: 0 var(--content-padding-desktop);
+}
+
+/* Contenedores Principales */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding-desktop);
+}
+.containerSmall {
+  max-width: var(--container-width-sm);
+  margin: 0 auto;
+  padding: 0 var(--content-padding-desktop);
+}
+/* FOOTER */
+.siteFooter {
+  padding: 2rem 0;
+  background-color: var(--color-bg-1);
+  font-size: 18px;
+}
+
+.footerInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Columna izquierda: Logo */
+.brand {
+  flex: 1 1 10%;
+  display: flex;
+  align-items: center;
+}
+
+/* Columna derecha: Navegación y redes sociales */
+.footerRight {
+  flex: 1 1 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoImage {
+  height: 80px;
+}
+
+/* Navegación (Contacto, Sobre nosotros, Preguntas frecuentes, Soporte) */
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+.footerLinks a {
+  color: var(--color-typography-1);
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: auto 1.5rem;
+}
+.footerLinks a:hover {
+  color: var(--color-primary-2);
+}
+
+/* Redes Sociales */
+.footerSocialLinks {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  gap: 4rem;
+}
+.footerSocialLinks a {
+  color: var(--color-typography-1);
+  text-decoration: none;
+}
+.footerSocialLinks a:hover {
+  color: var(--color-primary-2);
+}
+
+/* Derechos de autor: Ocupa toda la fila y se centra */
+.footerCopyright {
+  flex-basis: 100%;
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--color-typography-2);
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 767.98px) {
+  .footerInner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .brand {
+    flex: none;
+    margin-bottom: 1rem;
+  }
+  .footerRight {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .footerLinks a {
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    margin: auto 0.5rem;
+  }
+  .footerSocialLinks {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .logoImage {
+    height: 50px;
+  }
+}

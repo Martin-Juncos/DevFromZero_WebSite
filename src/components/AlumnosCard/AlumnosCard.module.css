@@ -1,0 +1,61 @@
+.student-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222; /* Fondo oscuro */
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.student-card:hover {
+  transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+}
+
+.student-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 2px solid #555;
+}
+
+.student-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #c8d400;
+  margin-bottom: 10px;
+}
+
+.student-description {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.student-button {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #008d36; /* Azul */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.student-button:hover {
+  background-color: #3aaa35; /* Azul más oscuro */
+  transform: translateY(-2px); /* Mover ligeramente hacia arriba */
+}
+
+.student-button:active {
+  transform: translateY(0); /* Volver al nivel original */
+  background-color: #105c9a; /* Azul más intenso */
+}

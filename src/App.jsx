@@ -7,8 +7,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Curso from "./components/Curso/Curso";
 import Alumnos from "./components/Alumnos/Alumnos";
-import Proyectos from "./components/Proyectos/Proyectos";
 import Main from "./components/Main/Main";
+import Proyectos from "./components/Proyectos/Proyectos";
+import ProyectoDetalle from "./components/Proyectos/ProyectoDetalle";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -24,6 +25,7 @@ function App() {
             <Route path="/curso" element={<Curso />} />
             <Route path="/alumnos" element={<Alumnos />} />
             <Route path="/proyectos" element={<Proyectos />} />
+            <Route path="/proyectos/:id" element={<ProyectoDetalle />} />
           </>
         )}
       </Routes>

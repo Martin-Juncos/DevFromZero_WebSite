@@ -29,7 +29,7 @@ function Header() {
             <nav className={`${styles.nav} ${menuOpen ? styles.open : ""}`}>
               <ul className={styles.navList}>
                 <li className={styles.navItem}>
-                  <a href="#hero" className={styles.navLink}>
+                  <a href="/" className={styles.navLink}>
                     Inicio
                   </a>
                 </li>
@@ -41,11 +41,6 @@ function Header() {
                 <li className={styles.navItem}>
                   <a href="#pricing" className={styles.navLink}>
                     Precios
-                  </a>
-                </li>
-                <li className={styles.navItem}>
-                  <a href="#cta" className={styles.navLink}>
-                    Contacto
                   </a>
                 </li>
                 <li className={styles.navItem}>

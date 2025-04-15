@@ -1,12 +1,13 @@
-import styles from "./Alumnos.module.css";
-import { Link } from "react-router-dom";
-import { alumnos } from "../../data/alumnos";
+// src/components/Alumnos/Alumnos.jsx
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./Alumnos.module.css";
+import { alumnos } from "../../data/alumnos";
 import Paginacion from "../Paginacion/Paginacion";
 import AlumnosCard from "../AlumnosCard/AlumnosCard";
 
 function Alumnos() {
-  const alumnosPorPagina = 8; // Número de tarjetas por página
+  const alumnosPorPagina = 10;
   const [paginaActual, setPaginaActual] = useState(1);
 
   const totalDeAlumnos = alumnos.length;
@@ -15,7 +16,7 @@ function Alumnos() {
 
   return (
     <div className={styles["home-container"]}>
-      <div className={styles["paginado"]}>
+      <div className={styles.paginado}>
         <Paginacion
           elementosPorPagina={alumnosPorPagina}
           paginaActual={paginaActual}
@@ -34,8 +35,8 @@ function Alumnos() {
           />
         ))}
       </div>
-      <Link to="/">
-        <button>Volver</button>
+      <Link to="/" className={styles["volver-button"]}>
+        Volver
       </Link>
     </div>
   );

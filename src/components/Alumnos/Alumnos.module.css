@@ -1,10 +1,65 @@
+/* src/components/Alumnos/Alumnos.module.css */
+
+/* Contenedor principal */
 .home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Para que ocupe toda la altura del viewport */
   padding: 2rem;
   color: #e0e0e0;
+  background-color: var(--color-bg-1);
+  font-family: var(--font-base);
 }
 
+/* Grid de alumnos */
 .alumnos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+  margin-top: 0.5rem;
+  flex-grow: 1; /* Hace que este bloque ocupe el espacio disponible */
+}
+
+/* Contenedor de la paginación */
+.paginado {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Botón "Volver" */
+.volver-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary-1);
+  color: var(--color-typography-1);
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem; /* Empuja el botón al final del contenedor flex */
+  align-self: center; /* Centra horizontalmente el botón */
+}
+
+.volver-button:hover {
+  background-color: var(--color-primary-2);
+}
+
+/* RESPONSIVIDAD: Ajustes en móviles */
+@media (max-width: 767.98px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .alumnos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .volver-button {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
 }

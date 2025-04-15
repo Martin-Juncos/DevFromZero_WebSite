@@ -35,7 +35,7 @@ function ProyectoDetalle() {
         </a>
       </div>
       <Link to="/proyectos" className={styles["volver-button"]}>
-        Volver
+        Volver a proyectos
       </Link>
     </div>
   );

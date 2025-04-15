@@ -1,61 +1,75 @@
+/* src/components/AlumnosCard/AlumnosCard.module.css */
+
+/* Tarjeta de alumno */
 .student-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #222; /* Fondo oscuro */
-  border: 1px solid #444;
+  background-color: var(--color-bg-2);
   border-radius: 8px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   text-align: center;
+  padding: 1rem;
   transition: transform 0.3s ease;
 }
 
 .student-card:hover {
-  transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+  transform: translateY(-5px);
 }
 
+/* Imagen o avatar del alumno */
 .student-avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+  width: 100%;
+  height: 250px;
   object-fit: cover;
-  border: 2px solid #555;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
+/* Nombre del alumno */
 .student-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: #c8d400;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
+/* Descripción o frase */
 .student-description {
-  font-size: 14px;
-  color: #ccc;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-typography-2);
 }
 
+/* Botón para ir al informe */
 .student-button {
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #008d36; /* Azul */
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary-1);
+  color: var(--color-typography-1);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .student-button:hover {
-  background-color: #3aaa35; /* Azul más oscuro */
-  transform: translateY(-2px); /* Mover ligeramente hacia arriba */
+  background-color: var(--color-primary-2);
 }
 
-.student-button:active {
-  transform: translateY(0); /* Volver al nivel original */
-  background-color: #105c9a; /* Azul más intenso */
+/* RESPONSIVIDAD */
+@media (max-width: 767.98px) {
+  .student-card {
+    padding: 0.75rem;
+  }
+  .student-avatar {
+    height: 150px;
+    width: 150px;
+  }
+  .student-name {
+    font-size: 1.3rem;
+  }
+  .student-description {
+    font-size: 0.9rem;
+  }
+  .student-button {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
 }

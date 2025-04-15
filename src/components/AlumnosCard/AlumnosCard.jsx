@@ -1,3 +1,4 @@
+// src/components/AlumnosCard/AlumnosCard.jsx
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import styles from "./AlumnosCard.module.css";
@@ -5,7 +6,7 @@ function AlumnosCard({ id, name, description, image }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate(`/students/${id}`);
+    navigate(`/alumno/${id}`);
   };
   return (
     <div className={styles["student-card"]}>

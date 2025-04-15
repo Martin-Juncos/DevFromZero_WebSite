@@ -1,0 +1,224 @@
+/* src/components/AlumnoDetalle/AlumnoDetalle.module.css */
+
+.student-detail {
+  /* Layout en grid de dos columnas y una fila extra abajo */
+  display: grid;
+  grid-template-areas:
+    "left right"
+    "bottom bottom";
+  grid-template-columns: 2fr 3fr;
+  gap: 2rem;
+
+  /* Ocupa todo el ancho y se extiende al menos hasta la altura completa del viewport */
+  width: 100%;
+  min-height: 85vh;
+  margin: 0;
+  padding: 2rem;
+
+  /* Paleta de colores y tipografía */
+  background-color: var(--color-bg-1);
+  color: var(--color-typography-1);
+  font-family: var(--font-base);
+
+  box-sizing: border-box;
+}
+
+/* Sección Izquierda */
+.left-section {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.left-section h1 {
+  /* Color personalizado o paleta, si prefieres una de tus variables, reemplaza #c8d400 */
+  color: var(--color-primary-2);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.left-section p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.left-section a {
+  text-decoration: none;
+  color: var(--color-primary-2);
+}
+
+.student-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección Derecha */
+.right-section {
+  grid-area: right;
+  padding-right: 1rem; /* Separación del borde derecho */
+  text-align: left;
+}
+
+.spaced {
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.skills {
+  margin-top: 1.5rem;
+}
+
+.skill-bar {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar {
+  flex: 1;
+  background-color: var(--color-bg-3);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  height: 20px;
+}
+
+.progress {
+  background-color: var(--color-primary-3);
+  height: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Sección Inferior */
+.bottom-section {
+  grid-area: bottom;
+  border: 1px solid var(--color-bg-3);
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.bottom-section h3 {
+  color: var(--color-primary-2);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.technologies-container {
+  margin-top: 0.5rem;
+}
+
+.technologies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.technology-item {
+  background-color: var(--color-bg-3);
+  color: var(--color-typography-1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+/* Botón de Volver */
+.volver-button {
+  display: inline-block; /* Para que respete el tamaño del botón interno */
+  padding: 0.75rem 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+/* Estiliza el propio botón */
+.volver-button button {
+  background-color: var(--color-primary-1);
+  color: var(--color-typography-1);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.volver-button button:hover {
+  background-color: var(--color-primary-2);
+}
+
+/* RESPONSIVIDAD */
+
+/* Hasta 1024px: pasamos a una sola columna */
+@media (max-width: 1024px) {
+  .student-detail {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left"
+      "right"
+      "bottom";
+    padding: 1rem;
+  }
+  .right-section {
+    padding-right: 0;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Hasta 768px */
+@media (max-width: 768px) {
+  .student-avatar {
+    width: 120px;
+    height: 120px;
+  }
+  .left-section h1 {
+    font-size: 1.4rem;
+  }
+  .progress {
+    font-size: 0.8rem;
+  }
+  .bottom-section h3 {
+    font-size: 1rem;
+  }
+}
+
+/* Hasta 480px */
+@media (max-width: 480px) {
+  .student-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  .left-section h1 {
+    font-size: 1.2rem;
+  }
+  .spaced {
+    font-size: 0.9rem;
+  }
+  .progress {
+    font-size: 0.7rem;
+  }
+  .bottom-section h3 {
+    font-size: 0.9rem;
+  }
+  .technology-item {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}

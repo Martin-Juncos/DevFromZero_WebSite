@@ -1,0 +1,50 @@
+/* Estilos Globales */
+.bodyWrap {
+  background-color: var(--color-bg-1);
+  color: var(--color-typography-1);
+  font-family: var(--font-base);
+  overflow-x: hidden;
+  /* Usamos padding variable según dispositivo, se ajustará en media queries */
+  padding: 0 var(--content-padding-desktop);
+}
+/* SECCIÓN DE BENEFICIOS */
+.features {
+  padding: 3rem 0;
+  background-color: var(--color-bg-1);
+}
+.featuresInner {
+  text-align: center;
+}
+.sectionTitle {
+  font-size: 32px; /* Desktop: H3 (gamma: 32px, 42px) */
+  margin-bottom: 2rem;
+}
+.featuresWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.feature {
+  flex: 1 1 calc(33.33% - 1rem);
+  background-color: var(--color-bg-3);
+  padding: 1rem;
+  border-radius: 4px;
+}
+.featureInner {
+  padding: 1rem;
+}
+.featureIcon img {
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.featureTitle {
+  font-size: 20px; /* (epsilon) */
+  margin-bottom: 0.5rem;
+}
+.featureDescription {
+  font-size: 18px; /* (zeta) */
+  color: var(--color-typography-2);
+}

@@ -30,10 +30,10 @@ function Footer() {
                   <a href="#">Contacto</a>
                 </li>
                 <li>
-                  <a href="#">Sobre nosotros</a>
+                  <a href="/about_us">Sobre nosotros</a>
                 </li>
                 <li>
-                  <a href="#">Preguntas frecuentes</a>
+                  <a href="/faq">Preguntas frecuentes</a>
                 </li>
                 <li>
                   <a href="#">Soporte</a>
@@ -41,22 +41,31 @@ function Footer() {
               </ul>
               <ul className={styles.footerSocialLinks}>
                 <li>
-                  <a href="#">
+                  <a
+                    href="https://www.facebook.com/BVCOM.Internet"
+                    target="_blank"
+                  >
                     <FaFacebookSquare />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="https://x.com/PoloITCtes" target="_blank">
                     <FaTwitter />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a
+                    href="https://www.instagram.com/bvcom_internet/"
+                    target="_blank"
+                  >
                     <FaInstagram />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/@poloitcorrientes4827"
+                    target="_blank"
+                  >
                     <FaYoutube />
                   </a>
                 </li>

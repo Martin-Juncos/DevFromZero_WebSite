@@ -1,0 +1,185 @@
+/* src/components/AboutUs/AboutUs.module.css */
+
+/* Grid principal que define 4 filas:
+   1) title (ocupa 2 columnas)
+   2) img - quienes
+   3) que - porq
+   4) como - vision
+*/
+.aboutGrid {
+  display: grid;
+  grid-template-areas:
+    "title  title title  title"
+    "img quienes quienes quienes"
+    "que    porq como   vision";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+
+  width: 100%;
+  min-height: 60vh;
+  padding: 0.5rem 2rem;
+
+  background-color: var(--color-bg-1);
+  color: var(--color-typography-1);
+  font-family: var(--font-base);
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* Título que ocupa ambas columnas */
+.titleBox {
+  grid-area: title;
+  text-align: center;
+  align-self: center; /* Centra verticalmente si sobra espacio */
+  margin-top: 0;
+}
+.titleBox h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary-1);
+}
+
+/* Imagen en la 2a fila, 1a columna */
+.imgBox {
+  grid-area: img;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Caja ¿Quiénes somos? en la 2a fila, 2a columna */
+.quienesBox {
+  background-color: var(--color-bg-1);
+  grid-area: quienes;
+  text-align: center;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+}
+.quienesBox h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-2);
+}
+.quienesBox p {
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+/* Fila 3: ¿Qué hacemos? (izquierda) y ¿Por qué lo hacemos? (derecha) */
+.queBox {
+  grid-area: que;
+  text-align: center;
+  background-color: var(--color-bg-2);
+  border-radius: 8px;
+  padding: 1rem;
+  height: 100%;
+}
+.queBox h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-2);
+}
+.queBox p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.porqBox {
+  grid-area: porq;
+  text-align: center;
+  background-color: var(--color-bg-2);
+  border-radius: 8px;
+  padding: 1rem;
+  height: 100%;
+}
+.porqBox h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-2);
+}
+.porqBox p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Fila 4: ¿Cómo lo hacemos? (izquierda) y Nuestra visión (derecha) */
+.comoBox {
+  grid-area: como;
+  text-align: center;
+  background-color: var(--color-bg-2);
+  border-radius: 8px;
+  padding: 1rem;
+  height: 100%;
+}
+.comoBox h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-2);
+}
+.comoBox p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.visionBox {
+  grid-area: vision;
+  text-align: center;
+  background-color: var(--color-bg-2);
+  border-radius: 8px;
+  padding: 1rem;
+  height: 100%;
+}
+.visionBox h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-2);
+}
+.visionBox p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* RESPONSIVIDAD: en pantallas <= 768px, una sola columna */
+@media (max-width: 768px) {
+  .aboutGrid {
+    grid-template-areas:
+      "title"
+      "img"
+      "quienes"
+      "que"
+      "porq"
+      "como"
+      "vision";
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .titleBox h1 {
+    font-size: 2rem;
+  }
+  .imgBox img {
+    height: 12rem;
+    width: 12rem;
+  }
+  .quienesBox h2,
+  .queBox h2,
+  .porqBox h2,
+  .comoBox h2,
+  .visionBox h2 {
+    font-size: 1.5rem;
+  }
+  .quienesBox p {
+    font-size: 1rem;
+  }
+  .queBox p,
+  .porqBox p,
+  .comoBox p,
+  .visionBox p {
+    font-size: 0.95rem;
+  }
+}

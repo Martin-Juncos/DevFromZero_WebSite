@@ -17,7 +17,7 @@ function Header() {
         <div className={styles.container}>
           <div className={styles.headerInner}>
             <div className={styles.brand}>
-              <a href="#hero">
+              <a href="/">
                 <img className={styles.logoImage} src={logo} alt="Logo" />
               </a>
             </div>
@@ -34,12 +34,12 @@ function Header() {
                   </a>
                 </li>
                 <li className={styles.navItem}>
-                  <a href="#features" className={styles.navLink}>
+                  <a href="/beneficios" className={styles.navLink}>
                     Beneficios
                   </a>
                 </li>
                 <li className={styles.navItem}>
-                  <a href="#pricing" className={styles.navLink}>
+                  <a href="/precios" className={styles.navLink}>
                     Precios
                   </a>
                 </li>

@@ -1,0 +1,187 @@
+/* src/components/Precios/Precios.module.css */
+
+/* Contenedor global para la sección de precios */
+.bodyWrap {
+  background-color: var(--color-bg-1);
+  color: var(--color-typography-1);
+  font-family: var(--font-base);
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sección de Precios */
+.pricing {
+  padding: 3rem 1rem;
+  background-color: var(--color-bg-1);
+  background-image: url("../../assets/images/pricing-illustration.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain; /* Opcional: ajusta según lo que necesites */
+}
+
+/* Contenedor interno para centrar el contenido y limitar el ancho */
+.pricingInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Encabezado de la sección de precios */
+.pricingHeader {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+.sectionTitle {
+  color: var(--color-typography-1);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.sectionParagraph {
+  color: var(--color-typography-2);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Subtítulo (para “¿Qué incluye?”) */
+.sectionSubtitle {
+  font-size: 1.75rem;
+  margin: 1.5rem 0;
+  color: var(--color-primary-1);
+}
+
+/* Lista de lo que incluye */
+.includedList {
+  list-style: disc inside;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 0;
+}
+.includedList li {
+  margin-bottom: 1rem;
+}
+
+/* Contenedor para las tablas de precios */
+.pricingTablesWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Tarjeta individual de precio */
+.pricingTable {
+  background-color: var(--color-bg-3);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+}
+.pricingTableInner {
+  padding: 2rem;
+}
+.pricingTableHeader {
+  margin-bottom: 1.5rem;
+}
+.pricingPrice {
+  font-size: 2.75rem;
+  font-weight: bold;
+}
+.priceCurrency {
+  font-size: 1.5rem;
+  vertical-align: top;
+}
+.priceAmount {
+  font-size: 3rem;
+  margin: 0 0.25rem;
+}
+.pricePeriod {
+  font-size: 1.25rem;
+  vertical-align: bottom;
+}
+.pricingFeaturesTitle {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+/* Lista de características de la tarjeta de precio */
+.pricingFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: left;
+}
+.pricingFeatures li {
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  position: relative;
+}
+.pricingFeatures li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary-2);
+}
+
+/* Botones generales */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  background-color: var(--color-bg-4);
+  color: var(--color-typography-1);
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: var(--color-primary-2);
+}
+.buttonPrimary {
+  background-color: var(--color-primary-1);
+}
+.buttonShadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.buttonBlock {
+  display: block;
+  width: 100%;
+}
+.buttonWideMobile {
+  width: 100%;
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 767.98px) {
+  .pricingInner {
+    padding: 0 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionParagraph {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .includedList {
+    font-size: 1rem;
+  }
+
+  .pricingFeatures,
+  .pricingFeatures li {
+    font-size: 1rem;
+  }
+}

@@ -11,6 +11,10 @@ import Main from "./components/Main/Main";
 import Proyectos from "./components/Proyectos/Proyectos";
 import ProyectoDetalle from "./components/Proyectos/ProyectoDetalle";
 import AlumnoDetalle from "./components/AlumnoDetalle/AlumnoDetalle";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Beneficios from "./components/Beneficios/Beneficios";
+import Precios from "./components/Precios/Precios";
+import PreguntasFrecuentes from "./components/PreguntasFrecuentes/PreguntasFrecuentes ";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -19,7 +23,13 @@ function App() {
       <Header />
       <Routes>
         {!isAuthenticated ? (
-          <Route path="*" element={<Main />} />
+          <>
+            <Route path="*" element={<Main />} />
+            <Route path="/about_us" element={<AboutUs />} />
+            <Route path="/beneficios" element={<Beneficios />} />
+            <Route path="/precios" element={<Precios />} />
+            <Route path="/faq" element={<PreguntasFrecuentes />} />
+          </>
         ) : (
           <>
             <Route path="/" element={<Home />} />
@@ -28,6 +38,10 @@ function App() {
             <Route path="/alumno/:id" element={<AlumnoDetalle />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/proyectos/:id" element={<ProyectoDetalle />} />
+            <Route path="/about_us" element={<AboutUs />} />
+            <Route path="/beneficios" element={<Beneficios />} />
+            <Route path="/precios" element={<Precios />} />
+            <Route path="/faq" element={<PreguntasFrecuentes />} />
           </>
         )}
       </Routes>

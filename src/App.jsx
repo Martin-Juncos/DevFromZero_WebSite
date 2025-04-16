@@ -15,6 +15,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Beneficios from "./components/Beneficios/Beneficios";
 import Precios from "./components/Precios/Precios";
 import PreguntasFrecuentes from "./components/PreguntasFrecuentes/PreguntasFrecuentes ";
+import Contacto from "./components/Contacto/Contacto";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -29,6 +30,7 @@ function App() {
             <Route path="/beneficios" element={<Beneficios />} />
             <Route path="/precios" element={<Precios />} />
             <Route path="/faq" element={<PreguntasFrecuentes />} />
+            <Route path="/contacto" element={<Contacto />} />
           </>
         ) : (
           <>
@@ -42,6 +44,7 @@ function App() {
             <Route path="/beneficios" element={<Beneficios />} />
             <Route path="/precios" element={<Precios />} />
             <Route path="/faq" element={<PreguntasFrecuentes />} />
+            <Route path="/contacto" element={<Contacto />} />
           </>
         )}
       </Routes>

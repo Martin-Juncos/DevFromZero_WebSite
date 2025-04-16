@@ -27,7 +27,7 @@ function Footer() {
             <div className={styles.footerRight}>
               <ul className={styles.footerLinks}>
                 <li>
-                  <a href="#">Contacto</a>
+                  <a href="/contacto">Contacto</a>
                 </li>
                 <li>
                   <a href="/about_us">Sobre nosotros</a>

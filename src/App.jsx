@@ -18,8 +18,30 @@ import PreguntasFrecuentes from "./components/PreguntasFrecuentes/PreguntasFrecu
 import Contacto from "./components/Contacto/Contacto";
 import PagarInscripcion from "./components/PagarInscripcion/PagarInscripcion";
 
+// Rutas públicas (accesibles sin autenticación)
+const publicRoutes = [
+  { path: "/about_us", element: <AboutUs /> },
+  { path: "/beneficios", element: <Beneficios /> },
+  { path: "/precios", element: <Precios /> },
+  { path: "/faq", element: <PreguntasFrecuentes /> },
+  { path: "/contacto", element: <Contacto /> },
+  { path: "/pagar", element: <PagarInscripcion /> },
+];
+
+// Rutas privadas (requieren autenticación)
+const privateRoutes = [
+  { path: "/", element: <Home /> },
+  { path: "/curso", element: <Curso /> },
+  { path: "/alumnos", element: <Alumnos /> },
+  { path: "/alumno/:id", element: <AlumnoDetalle /> },
+  { path: "/proyectos", element: <Proyectos /> },
+  { path: "/proyectos/:id", element: <ProyectoDetalle /> },
+  ...publicRoutes, // Incluye las rutas públicas también para usuarios autenticados
+];
+
 function App() {
   const { isAuthenticated } = useAuth0();
+
   return (
     <>
       <Header />
@@ -27,27 +49,23 @@ function App() {
         {!isAuthenticated ? (
           <>
             <Route path="*" element={<Main />} />
-            <Route path="/about_us" element={<AboutUs />} />
-            <Route path="/beneficios" element={<Beneficios />} />
-            <Route path="/precios" element={<Precios />} />
-            <Route path="/faq" element={<PreguntasFrecuentes />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/pagar" element={<PagarInscripcion />} />
+            {publicRoutes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+              />
+            ))}
           </>
         ) : (
           <>
-            <Route path="/" element={<Home />} />
-            <Route path="/curso" element={<Curso />} />
-            <Route path="/alumnos" element={<Alumnos />} />
-            <Route path="/alumno/:id" element={<AlumnoDetalle />} />
-            <Route path="/proyectos" element={<Proyectos />} />
-            <Route path="/proyectos/:id" element={<ProyectoDetalle />} />
-            <Route path="/about_us" element={<AboutUs />} />
-            <Route path="/beneficios" element={<Beneficios />} />
-            <Route path="/precios" element={<Precios />} />
-            <Route path="/faq" element={<PreguntasFrecuentes />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/pagar" element={<PagarInscripcion />} />
+            {privateRoutes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+              />
+            ))}
           </>
         )}
       </Routes>

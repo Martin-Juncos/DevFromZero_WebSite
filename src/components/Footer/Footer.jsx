@@ -36,7 +36,13 @@ function Footer() {
                   <a href="/faq">Preguntas frecuentes</a>
                 </li>
                 <li>
-                  <a href="#">Soporte</a>
+                  <a
+                    href="https://wa.me/5493777679100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Soporte
+                  </a>
                 </li>
               </ul>
               <ul className={styles.footerSocialLinks}>

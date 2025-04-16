@@ -27,7 +27,6 @@ function Main() {
     <div className={styles.bodyWrap}>
       {" "}
       <main>
-        {/* Sección Hero */}
         <section id="hero" className={styles.hero}>
           <div className={styles.container}>
             <div className={styles.heroInner}>
@@ -51,11 +50,11 @@ function Main() {
                 <div className={styles.heroCTA}>
                   <a
                     className={`${styles.button} ${styles.buttonPrimary}`}
-                    href="#"
+                    href="/precios"
                   >
                     ¡Inscríbete ahora!
                   </a>
-                  <a className={styles.button} href="#">
+                  <a className={styles.button} href="#features">
                     Más información
                   </a>
                 </div>
@@ -76,34 +75,34 @@ function Main() {
                 <div
                   className={`${styles.heroFigureBox} ${styles.box1}`}
                   data-rotation="45deg"
-                ></div>
+                />
                 <div
                   className={`${styles.heroFigureBox} ${styles.box2}`}
                   data-rotation="-45deg"
-                ></div>
+                />
                 <div
                   className={`${styles.heroFigureBox} ${styles.box3}`}
                   data-rotation="0deg"
-                ></div>
+                />
                 <div
                   className={`${styles.heroFigureBox} ${styles.box4}`}
                   data-rotation="-135deg"
-                ></div>
-                <div className={`${styles.heroFigureBox} ${styles.box5}`}></div>
-                <div className={`${styles.heroFigureBox} ${styles.box6}`}></div>
-                <div className={`${styles.heroFigureBox} ${styles.box7}`}></div>
+                />
+                <div className={`${styles.heroFigureBox} ${styles.box5}`} />
+                <div className={`${styles.heroFigureBox} ${styles.box6}`} />
+                <div className={`${styles.heroFigureBox} ${styles.box7}`} />
                 <div
                   className={`${styles.heroFigureBox} ${styles.box8}`}
                   data-rotation="-22deg"
-                ></div>
+                />
                 <div
                   className={`${styles.heroFigureBox} ${styles.box9}`}
                   data-rotation="-52deg"
-                ></div>
+                />
                 <div
                   className={`${styles.heroFigureBox} ${styles.box10}`}
                   data-rotation="-50deg"
-                ></div>
+                />
               </div>
             </div>
           </div>
@@ -228,7 +227,7 @@ function Main() {
                     <div className={styles.pricingCTAWrap}>
                       <a
                         className={`${styles.button} ${styles.buttonPrimary} ${styles.buttonBlock}`}
-                        href="#"
+                        href="/pagar"
                       >
                         ¡Empieza ahora!
                       </a>
@@ -255,7 +254,7 @@ function Main() {
               <div className={styles.ctaButtonWrap}>
                 <a
                   className={`${styles.button} ${styles.buttonPrimary} ${styles.buttonWideMobile}`}
-                  href="#"
+                  href="/pagar"
                 >
                   ¡Inscríbete hoy!
                 </a>

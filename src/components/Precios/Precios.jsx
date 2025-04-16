@@ -88,7 +88,7 @@ function Precios() {
                   <div className={styles.pricingCTAWrap}>
                     <a
                       className={`${styles.button} ${styles.buttonPrimary} ${styles.buttonBlock}`}
-                      href="#"
+                      href="/pagar"
                     >
                       ¡Empieza ahora!
                     </a>

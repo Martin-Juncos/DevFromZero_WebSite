@@ -123,34 +123,40 @@
 }
 
 /* RESPONSIVE: MENÚ HAMBURGUESA */
+/* src/components/Header/Header.module.css */
+
 @media (max-width: 767.98px) {
   .hamburger {
     display: flex;
   }
+
+  /* Hacemos que el nav sea estático en el flujo, no absolute */
   .nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--color-bg-1);
-    flex-direction: column;
-    align-items: center;
+    position: static;
+    width: 100%;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
+  /* Cuando tenga la clase .open, desplegamos todo el contenido */
   .nav.open {
-    max-height: 300px; /* Ajusta este valor según el contenido */
+    max-height: 90vh; /* o un valor suficiente para tus items */
   }
+
   .navList {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     width: 100%;
-    height: 11rem;
   }
   .navItem {
-    margin: 0.3rem 0;
+    margin: 0.5rem 0;
     text-align: center;
-    font-size: 1rem;
+  }
+  .navLink {
+    font-size: 1.25rem;
   }
 }

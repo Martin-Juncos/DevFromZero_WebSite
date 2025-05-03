@@ -1,101 +1,137 @@
-/* src/components/Contacto/Contacto.module.css */
-
 .bodyWrap {
   background-color: var(--color-bg-1);
   color: var(--color-typography-1);
   font-family: var(--font-base);
-  overflow-x: hidden;
-  /* Usamos padding variable según dispositivo, se ajustará en media queries */
   padding: 0 var(--content-padding-desktop);
-}
-.contactContainer {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: var(--color-bg-2);
-  color: var(--color-typography-1);
-  font-family: var(--font-base);
+  min-height: 68vh; /* ocupa toda la altura de la ventana */
+  display: flex;
+  align-items: center; /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
   box-sizing: border-box;
 }
 
-.title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--color-primary-1);
+/* Contenedor principal: dos columnas */
+.contactContainer {
+  display: flex;
+  gap: 2rem;
+  width: 1200px;
+  margin: 2rem auto;
+  box-sizing: border-box;
 }
 
+/* Columna del formulario */
+.formSection {
+  flex: 1;
+}
+.title {
+  font-size: 2.5rem;
+  color: var(--color-primary-1);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Formulario */
 .contactForm {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-
 .fieldGroup {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
-
 .fieldGroup label {
-  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
-
 .fieldGroup input,
 .fieldGroup textarea {
   padding: 0.75rem;
   font-size: 1rem;
+  background-color: var(--color-bg-3);
   border: 1px solid var(--color-bg-2);
   border-radius: 4px;
-  background-color: var(--color-bg-3);
   color: var(--color-typography-1);
 }
-
 .error {
   color: var(--color-primary-2);
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
-
 .submitButton {
+  align-self: flex-start;
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
   background-color: var(--color-primary-1);
   color: var(--color-typography-1);
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  align-self: center;
 }
-
 .submitButton:hover {
   background-color: var(--color-primary-2);
 }
-
 .successMessage {
-  text-align: center;
-  font-size: 1.1rem;
   color: var(--color-primary-1);
   margin-top: 1rem;
 }
 
-/* RESPONSIVIDAD */
+/* Columna de info + mapa */
+.infoSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.logo {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+.brandName {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-typography-1);
+}
+.address {
+  color: var(--color-typography-2);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Contenedor del mapa */
+.mapContainer {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  flex-grow: 1;
+}
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  border: 0;
+}
+/* ejemplo en CSS */
+.map {
+  width: 100%;
+  height: 200px;
+  background-image: url("https://maps.google.com/maps?q=Santiago%20del%20Estero%20788,%20Bella%20Vista,%20Corrientes,%20Argentina&z=15&output=embed");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive */
 @media (max-width: 767.98px) {
   .contactContainer {
-    padding: 1rem;
+    flex-direction: column;
   }
   .title {
-    font-size: 2rem;
-  }
-  .fieldGroup input,
-  .fieldGroup textarea {
-    font-size: 0.9rem;
-    padding: 0.5rem;
+    text-align: center;
   }
   .submitButton {
     width: 100%;
-    font-size: 0.9rem;
+    text-align: center;
   }
 }

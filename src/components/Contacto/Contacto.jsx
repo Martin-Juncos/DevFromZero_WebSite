@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Contacto.module.css";
+import logo from "../../assets/images/logo.svg";
 
 function Contacto() {
   const [formData, setFormData] = useState({
@@ -35,7 +36,6 @@ function Contacto() {
     const errors = validate();
     setError(errors);
     if (Object.keys(errors).length === 0) {
-      // Aquí se haría la llamada API para enviar el formulario
       console.log("Enviando formulario", formData);
       setEnviado(true);
     }
@@ -44,69 +44,94 @@ function Contacto() {
   return (
     <div className={styles.bodyWrap}>
       <div className={styles.contactContainer}>
-        <h1 className={styles.title}>Contacto</h1>
-        <form className={styles.contactForm} onSubmit={handleSubmit}>
-          <div className={styles.fieldGroup}>
-            <label htmlFor="nombre">Nombre</label>
-            <input
-              id="nombre"
-              name="nombre"
-              type="text"
-              value={formData.nombre}
-              onChange={handleChange}
-            />
-            {error.nombre && (
-              <span className={styles.error}>{error.nombre}</span>
+        {/* Formulario a la izquierda */}
+        <div className={styles.formSection}>
+          <h1 className={styles.title}>Contacto</h1>
+          <form className={styles.contactForm} onSubmit={handleSubmit}>
+            <div className={styles.fieldGroup}>
+              <label htmlFor="nombre">Nombre</label>
+              <input
+                id="nombre"
+                name="nombre"
+                type="text"
+                value={formData.nombre}
+                onChange={handleChange}
+              />
+              {error.nombre && (
+                <span className={styles.error}>{error.nombre}</span>
+              )}
+            </div>
+
+            <div className={styles.fieldGroup}>
+              <label htmlFor="email">Correo Electrónico</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              {error.email && (
+                <span className={styles.error}>{error.email}</span>
+              )}
+            </div>
+
+            <div className={styles.fieldGroup}>
+              <label htmlFor="asunto">Asunto</label>
+              <input
+                id="asunto"
+                name="asunto"
+                type="text"
+                value={formData.asunto}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className={styles.fieldGroup}>
+              <label htmlFor="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                value={formData.mensaje}
+                onChange={handleChange}
+              />
+              {error.mensaje && (
+                <span className={styles.error}>{error.mensaje}</span>
+              )}
+            </div>
+
+            <button type="submit" className={styles.submitButton}>
+              Enviar Mensaje
+            </button>
+            {enviado && (
+              <p className={styles.successMessage}>
+                ¡Gracias! Tu mensaje ha sido enviado.
+              </p>
             )}
-          </div>
+          </form>
+        </div>
 
-          <div className={styles.fieldGroup}>
-            <label htmlFor="email">Correo Electrónico</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            {error.email && <span className={styles.error}>{error.email}</span>}
-          </div>
-
-          <div className={styles.fieldGroup}>
-            <label htmlFor="asunto">Asunto</label>
-            <input
-              id="asunto"
-              name="asunto"
-              type="text"
-              value={formData.asunto}
-              onChange={handleChange}
+        {/* Información y mapa a la derecha */}
+        <div className={styles.infoSection}>
+          <img src={logo} alt="DevFromZero" className={styles.logo} />
+          <h2 className={styles.brandName}>DevFromZero</h2>
+          <p className={styles.address}>
+            Santiago del Estero 788
+            <br />
+            Bella Vista, Corrientes
+          </p>
+          <div className={styles.mapContainer}>
+            <iframe
+              title="Ubicación DevFromZero"
+              className={styles.map}
+              src="https://maps.google.com/maps?q=Santiago%20del%20Estero%20788,%20Bella%20Vista,%20Corrientes,%20Argentina&z=15&output=embed"
+              style={{ border: 0, width: "100%", height: "100%" }}
+              allowFullScreen
+              loading="lazy"
             />
           </div>
-
-          <div className={styles.fieldGroup}>
-            <label htmlFor="mensaje">Mensaje</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              rows="5"
-              value={formData.mensaje}
-              onChange={handleChange}
-            ></textarea>
-            {error.mensaje && (
-              <span className={styles.error}>{error.mensaje}</span>
-            )}
-          </div>
-
-          <button type="submit" className={styles.submitButton}>
-            Enviar Mensaje
-          </button>
-
-          {enviado && (
-            <p className={styles.successMessage}>
-              ¡Gracias! Tu mensaje ha sido enviado.
-            </p>
-          )}
-        </form>
+        </div>
       </div>
     </div>
   );
